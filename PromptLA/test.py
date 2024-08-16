@@ -21,7 +21,7 @@ device = torch.device("cuda:3") if torch.cuda.is_available() else 'cpu'
 
 def get_inception_model():
     model = inception_v3(pretrained=True, transform_input=False)
-    model.fc = torch.nn.Identity()  # 去掉最后的分类层
+    model.fc = torch.nn.Identity()  
     model.eval()
     return model
 
