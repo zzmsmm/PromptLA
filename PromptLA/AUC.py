@@ -101,14 +101,11 @@ else:
 
 
 
-    # 计算 AUC 值
     auc = roc_auc_score(y_true, y_scores)
     print(f"AUC: {auc}")
 
-    # 计算 ROC 曲线的 TPR 和 FPR
     fpr, tpr, thresholds = roc_curve(y_true, y_scores)
 
-    # 绘制 ROC 曲线
     plt.figure()
     plt.plot(fpr, tpr, color='blue', lw=2, label=f'ROC curve (area = {auc:.3f})')
     plt.plot([0, 1], [0, 1], color='grey', lw=2, linestyle='--')
